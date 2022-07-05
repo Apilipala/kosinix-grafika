@@ -780,6 +780,9 @@ final class Editor implements EditorInterface
     private function _resize(&$image, $newWidth, $newHeight)
     {
 
+        $newWidth = intval ($newWidth);
+        $newHeight = intval ($newHeight);
+
         if ('GIF' == $image->getType()) { // Animated image. Eg. GIF
 
             $imagick = $image->getCore()->coalesceImages();
